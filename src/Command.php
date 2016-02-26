@@ -3,14 +3,12 @@
 namespace Jehaby\Quest;
 
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Helper\QuestionHelper;
-
 
 /**
  * Class Command
@@ -56,7 +54,6 @@ class Command extends SymfonyCommand {
         ;
     }
 
-
     /**
      * @param InputInterface $input
      * @param OutputInterface $output
@@ -66,7 +63,6 @@ class Command extends SymfonyCommand {
     {
         $table = new Table($output);
         $table->setHeaders(['count', 'amount']);
-        $output->writeln($input->getOption('with-documents'));
 
         $withDocuments = $input->getOption('with-documents');
         $withoutDocuments = $input->getOption('without-documents');
